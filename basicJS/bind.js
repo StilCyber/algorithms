@@ -39,7 +39,7 @@
 
 // obj.say()
 
-//////////////////////////////////////
+//////////////////////////////////////////////////////
 
 // const ex = function (value, sum) {
 //     console.log(sum + value)
@@ -89,7 +89,54 @@
 
 // console.log(array.multBy(2));
 
-////////////////////////
+////////////////////////////////////////////////////////
+
+// this укажет не на currentFilter, а на глобальный объект, нужна стрелочная функция 
+
+
+// const userService = {
+//     currentFilter: 'active',
+//     users: [
+//         {name: 'Alex', status: 'active'},
+//         {name: 'Nick', status: 'deleted'}
+//     ],
+//     getFilteredUsers: function() {
+//         return this.users.filter(function(user) {
+//             return user.status === this.currentFilter
+//         })
+//     }
+// }
+
+// console.log(userService.getFilteredUsers());
+
+
+/////////////////////////////////////////////////////////
+
+// const user = {
+//     name: 'Stil', 
+//     lastName: 'Chan',
+//     fullName: function() {
+//         let count = 0
+//         return this
+//     } 
+// }
 
 
 
+// console.log(user.fullName());
+
+// function tree() {
+//     return () => {
+//         return this
+//     }
+// }
+
+// console.log(tree());
+
+function createCalcFunction(n) {
+    return function() {
+        console.log((1000 * n));
+    }
+}
+
+createCalcFunction(42)
